@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import SearchBar from '../components/Searchbar';
+import useDealStore from "../store/dealStore";
 
 const Banner = () => {
   const pages = [
@@ -14,10 +15,7 @@ const Banner = () => {
     { name: "Map View", link: "/map-view" },
     { name: "Favorite Discounts", link: "/favorites" },
   ];
-
-  const handleSearch = (value) => {
-    // Implement the search logic
-  };
+  const setSearchQuery = useDealStore(state => state.setSearchQuery);
 
   return (
     <AppBar position="fixed" sx={{ backgroundColor: '#4E2A84' }}>
@@ -34,7 +32,10 @@ const Banner = () => {
               </Button>
             ))}
           </Box>
-          <SearchBar handleSearch={handleSearch} />
+          <SearchBar
+            handleSearch={setSearchQuery}
+            className="p-2"
+          />
         </Toolbar>
       </Container>
     </AppBar>
