@@ -11,8 +11,27 @@ import DealModal from "./DealModal";
 
 
 export default function DealCard({ deal }) {
+
+  const visitWebsite = () => {
+    window.open("https://" + deal.Website);
+  };
+
+  const getMaxDiscount = (description) => {
+    // Match all percentages in the description
+    const matches = description.match(/(\d+)%/g);
+  
+    // If no matches found, return a default message or null
+    if (!matches) return description;
+  
+    // Extract percentage values and find the maximum
+    const maxDiscount = Math.max(...matches.map(match => parseInt(match)));
+  
+    // Construct the desired output
+    return `check out today to receive up to ${maxDiscount}% off`;
+  }
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, margin: '16px' }}>
       {/* <CardMedia
         component="img"
         alt="green iguana"
@@ -23,12 +42,12 @@ export default function DealCard({ deal }) {
         <Typography gutterBottom variant="h5" component="div">
           {deal.Name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {deal.Discount}
+        <Typography variant="body1" color="text.secondary">
+          { getMaxDiscount(deal.Discount)}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
+      <CardActions sx={{ justifyContent: 'center' }}>
+        <Button size="small" onClick={visitWebsite}>Visit Website</Button>
         <DealModal deal={deal} />
         {/* <Button size="small" onClick={handleOpenModal}>Learn More</Button> */}
         
