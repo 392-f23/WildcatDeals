@@ -28,12 +28,14 @@ const App = () => {
     });
   }, []);
 
+  if (!businesses.length) return null;
+
   return (
     <div className="App min-h-screen flex flex-col">
       <Banner />
       <div className="flex-grow" style={{ paddingTop: '84px' }}>
       </div>
-      <DealCard deal={businesses} handleOpenModal={handleOpenModal} />
+      <DealCard deal={businesses[0]} handleOpenModal={handleOpenModal} />
       <footer className="w-full p-8">
         <p className="text-center text-default-500 text-sm">Northwestern University</p>
         <p className="text-center text-default-500 text-sm">© 2023 Wildcat Deals</p>

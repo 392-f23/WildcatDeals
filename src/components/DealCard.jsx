@@ -11,9 +11,8 @@ import DealModal from "./DealModal";
 
 
 export default function DealCard({ deal }) {
-
   const visitWebsite = () => {
-    window.open("https://" + deal.Website);
+    window.open(deal.website);
   };
 
   const getMaxDiscount = (description) => {
@@ -40,10 +39,10 @@ export default function DealCard({ deal }) {
       /> */}
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {deal.Name}
+          {deal.name}
         </Typography>
         <Typography variant="body1" color="text.secondary">
-          { getMaxDiscount(deal.Discount)}
+          { getMaxDiscount(deal.discount_info)}
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: 'center' }}>

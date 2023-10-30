@@ -33,30 +33,30 @@ export default function DealModal( {deal} ) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            { deal.Name }
+            { deal.name }
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.Description }
-          </Typography>
-
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.Discount }
+            { deal.description }
           </Typography>
 
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.Address }
+            { deal.discount_info }
           </Typography>
 
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.Phone }
+            { deal.address }
+          </Typography>
+
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            { deal.phone }
           </Typography>
 
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.Email }
+            { deal.email }
           </Typography>
 
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.Website }
+            { deal.website }
         </Typography>
         </Box>
       </Modal>
