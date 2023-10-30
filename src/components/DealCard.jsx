@@ -15,7 +15,10 @@ export default function DealCard({ deal }) {
     window.open(deal.website);
   };
 
-  const getMaxDiscount = (description) => {
+  const getMaxDiscount = (description) => {    
+    // Guard against null or undefined
+    if (!description) return null;
+
     // Match all percentages in the description
     const matches = description.match(/(\d+)%/g);
   
