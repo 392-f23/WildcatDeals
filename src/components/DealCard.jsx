@@ -1,19 +1,38 @@
-import React from 'react';
-import "./DealCard.css";
 
-function DealCard({ deal }) {
+
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import DealModal from "./DealModal";
+
+
+export default function DealCard({ deal }) {
   return (
-    <div className="deal-card">
-      <h2>{deal.Name}</h2>
-      <p><strong>Discount:</strong> {deal.Discount}</p>
-      <p><strong>Address:</strong> {deal.Address}</p>
-      <p><strong>Phone:</strong> {deal.Phone}</p>
-      <p><strong>Description:</strong> {deal.Description}</p>
-      <p><strong>Website:</strong> <a href={deal.Website} target="_blank" rel="noopener noreferrer">{deal.Website}</a></p>
-      <p><strong>Email:</strong> {deal.Email}</p>
-      <p><strong>Category:</strong> {deal.Category}</p>
-    </div>
+    <Card sx={{ maxWidth: 345 }}>
+      {/* <CardMedia
+        component="img"
+        alt="green iguana"
+        height="100"
+        image="/static/images/cards/contemplative-reptile.jpg"
+      /> */}
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {deal.Name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {deal.Discount}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Share</Button>
+        <DealModal deal={deal} />
+        {/* <Button size="small" onClick={handleOpenModal}>Learn More</Button> */}
+        
+      </CardActions>
+    </Card>
   );
 }
-
-export default DealCard;

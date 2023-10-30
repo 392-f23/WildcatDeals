@@ -1,10 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import Banner from "./components/Banner";
 import DealCard from "./components/DealCard";
+import DealModal from "./components/DealModal";
 
 const App = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   const deal = {
     "Name": "Living Mindfully Yoga",
     "Discount": "10% off a series of 6 private yoga sessions;15% off first 60-minute Shiatsu session;Free health history",
@@ -19,9 +30,9 @@ const App = () => {
     return (
         <div className="App min-h-screen flex flex-col">
             <Banner />
-            <div className="flex-grow">
+            <div className="flex-grow" style={{ paddingTop: '84px' }}>
             </div>
-            <DealCard deal={deal} />
+            <DealCard deal={deal} handleOpenModal={handleOpenModal} />
             <footer className="w-full p-8">
                 <p className="text-center text-default-500 text-sm">Northwestern University</p>
                 <p className="text-center text-default-500 text-sm">© 2023 Wildcat Deals</p>
