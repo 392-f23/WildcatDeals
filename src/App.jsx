@@ -8,16 +8,10 @@ import { getDbData } from "./utilities/firebase";
 
 const App = () => {
   const [businesses, setBusinesses] = useState([]);
-  const [businesses_meta, setBusinessesMeta] = useState({});
 
   useEffect(() => {
-    getDbData("/wa_data/businesses").then((data) => {
+    getDbData("/businesses").then((data) => {
       setBusinesses(data);
-    }).catch((error) => {
-      console.log(error);
-    });
-    getDbData("/wa_data/meta").then((data) => {
-      setBusinessesMeta(data);
     }).catch((error) => {
       console.log(error);
     });
