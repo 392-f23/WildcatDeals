@@ -1,43 +1,36 @@
-import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+
+import Banner from "./components/Banner";
+import { getDbData } from "./utilities/firebase";
+import DealsDisplay from "./components/DealsDisplay";
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const [businesses, setBusinesses] = useState([]);
+
+  useEffect(() => {
+    getDbData("/businesses").then((data) => {
+      setBusinesses(data);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }, []);
+
+  if (!businesses.length) return null;
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount(count => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test hot module replacement (HMR).
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="App min-h-screen flex flex-col">
+      <Banner />
+      <div className="flex-grow" style={{ paddingTop: '84px' }}>
+        <DealsDisplay deals={businesses} />
+      </div>
+      <footer className="w-full p-8">
+        <p className="text-center text-default-500 text-sm">Northwestern University</p>
+        <p className="text-center text-default-500 text-sm">© 2023 Wildcat Deals</p>
+      </footer>
+
     </div>
   );
 };

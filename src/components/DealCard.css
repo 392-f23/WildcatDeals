@@ -1,0 +1,29 @@
+.deal-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+  }
+  
+  .deal-card h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .deal-card p {
+    color: #666;
+    line-height: 1.4;
+  }
+  
+  .deal-card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .deal-card a:hover {
+    text-decoration: underline;
+  }
+  
