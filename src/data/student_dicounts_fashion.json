@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at H&M",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/056/336/small/default_image.jpg?1697493411",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/144/original/data?1645026646",
+        "discount_description": "20% Student Discount"
+    },
+    {
+        "name": "Online at Crocs",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/035/686/small/default_image.jpg?1697154553",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/054/302/original/data?1570609463",
+        "discount_description": "25% off + Stackable on clearance"
+    },
+    {
+        "name": "Online at Nike",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/047/980/original/default_image.jpg?1670358657",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/316/original/data?1669060422",
+        "discount_description": "Students Get Up to 40% Off"
+    },
+    {
+        "name": "Online at PrettyLittleThing",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/039/774/small/default_image.jpg?1698930946",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/682/original/data?1570609256",
+        "discount_description": "50% off everything + Extra 10% Student Discount + Free Shipping"
+    },
+    {
+        "name": "Online at Princess Polly",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/039/699/small/default_image.jpg?1698626878",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/055/296/original/data?1689640103",
+        "discount_description": "15% Student Discount"
+    },
+    {
+        "name": "Online at Foot Locker",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/040/778/small/default_image.jpg?1620737610",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/795/original/data?1598474142",
+        "discount_description": "20% Student Discount"
+    },
+    {
+        "name": "Online at White Fox Boutique",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/069/940/original/default_image.jpg?1696175203",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/055/879/original/data?1600830166",
+        "discount_description": "10% Student Discount"
+    },
+    {
+        "name": "Online at Gymshark",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/054/878/original/default_image.jpg?1692887661",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/002/282/original/data?1570609265",
+        "discount_description": "10% Student Discount Sitewide"
+    },
+    {
+        "name": "Online at UGG",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/056/879/original/default_image.jpg?1658437229",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/717/original/data?1643225586",
+        "discount_description": "10% Student Discount"
+    },
+    {
+        "name": "Online at American Eagle",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/043/262/small/default_image.jpg?1687917349",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/704/original/data?1619129763",
+        "discount_description": "10% Student Discount"
+    }
+]

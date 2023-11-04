@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at Swagbucks",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/067/641/small/default_image.jpg?1686578100",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/171/original/data?1686577500",
+        "discount_description": "Free Gift Cards"
+    },
+    {
+        "name": "Online at GEICO",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/052/504/original/default_image.jpg?1647025902",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/742/original/data?1647007150",
+        "discount_description": "Up to $200 Student Discount"
+    },
+    {
+        "name": "Online at Progressive",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/055/285/original/default_image.jpg?1654208462",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/765/original/data?1654285421",
+        "discount_description": "Up to 10% Student Discount"
+    },
+    {
+        "name": "Online at State Farm",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/054/142/original/default_image.jpg?1651517149",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/626/original/data?1651522013",
+        "discount_description": "Up to 30% Student Discount"
+    },
+    {
+        "name": "Online at Erie Insurance",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/056/483/original/default_image.jpg?1657313567",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/060/328/original/data?1657546043",
+        "discount_description": "College Student Discount"
+    },
+    {
+        "name": "Online at YNAB",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/055/402/original/default_image.jpg?1654633434",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/735/original/data?1654630874",
+        "discount_description": "Free Subscription for College Students"
+    },
+    {
+        "name": "Online at Wells Fargo",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/070/414/small/default_image.jpg?1692129395",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/061/590/original/data?1662754472",
+        "discount_description": "$300 Checking Bonus"
+    },
+    {
+        "name": "Online at The Economist",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/052/148/original/default_image.jpg?1693826042",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/309/original/data?1628259744",
+        "discount_description": "Students get 75% off an annual digital subscription"
+    },
+    {
+        "name": "Online at Direct Auto Insurance",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/056/490/original/default_image.jpg?1657314250",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/060/333/original/data?1657546248",
+        "discount_description": "Up to 10% Student Discount"
+    },
+    {
+        "name": "Online at State Auto",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/056/923/original/default_image.jpg?1658521779",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/060/603/original/data?1658526586",
+        "discount_description": "Good Student Discount"
+    }
+]

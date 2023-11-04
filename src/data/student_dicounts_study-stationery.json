@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at Best Buy",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/723/original/default_image.jpg?1663086348",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/220/original/data?1610988785",
+        "discount_description": "Back to School Student Hub"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/570/small/default_image.jpg?1698734958",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "$100 Coupon Bundle"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/571/small/default_image.jpg?1698983914",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "Up to 90% Off Black Friday Sale"
+    },
+    {
+        "name": "Online at Course Hero",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/732/original/default_image.jpg?1663099862",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/061/601/original/data?1663107607",
+        "discount_description": "Free Basic Membership"
+    },
+    {
+        "name": "Online at Redbubble",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/031/419/original/default_image.jpg?1691678059",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/053/261/original/data?1570609342",
+        "discount_description": "15% Student Discount"
+    },
+    {
+        "name": "Online at Etsy",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/049/850/original/default_image.jpg?1663190687",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/058/333/original/data?1641586763",
+        "discount_description": "Up to 60% Off Gifts on Sale"
+    },
+    {
+        "name": "Online at Walmart",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/047/931/small/default_image.jpg?1662752135",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/612/original/data?1637011712",
+        "discount_description": "Up to 50% Off College Rollbacks"
+    },
+    {
+        "name": "Online at Adobe",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/069/761/small/default_image.jpg?1692636159",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/386/original/data?1596767637",
+        "discount_description": "Students save over 60% on Adobe Creative Cloud"
+    },
+    {
+        "name": "Online at Papier",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/044/413/original/default_image.jpg?1682415541",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/057/535/original/data?1628148981",
+        "discount_description": "10% Student Discount"
+    },
+    {
+        "name": "Online at Grammarly",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/043/574/original/default_image.jpg?1621545636",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/590/original/data?1621279354",
+        "discount_description": "20% Student Discount"
+    }
+]

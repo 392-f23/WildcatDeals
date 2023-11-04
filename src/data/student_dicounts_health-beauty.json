@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at e.l.f. Cosmetics",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/046/516/original/default_image.jpg?1690876034",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/053/334/original/data?1694119444",
+        "discount_description": "20% Student Discount"
+    },
+    {
+        "name": "Online at Gymshark",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/054/878/original/default_image.jpg?1692887661",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/002/282/original/data?1570609265",
+        "discount_description": "10% Student Discount Sitewide"
+    },
+    {
+        "name": "Online at Target",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/048/956/original/default_image.jpg?1673647306",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/773/original/data?1638818507",
+        "discount_description": "Up to 50% Off Clearance"
+    },
+    {
+        "name": "Online at SHEIN",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/072/616/small/default_image.jpg?1696902181",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/002/232/original/data?1647329562",
+        "discount_description": "15% Student Discount"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/570/small/default_image.jpg?1698734958",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "$100 Coupon Bundle"
+    },
+    {
+        "name": "Online at Sephora",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/053/523/small/default_image.jpg?1697087397",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/735/original/data?1646404879",
+        "discount_description": "Up to 66% Off Sale"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/571/small/default_image.jpg?1698983914",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "Up to 90% Off Black Friday Sale"
+    },
+    {
+        "name": "Online at ISEE HAIR",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/072/947/small/default_image.jpg?1697620091",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/536/original/data?1691397947",
+        "discount_description": "15% Student Discount"
+    },
+    {
+        "name": "Online at Macy's",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/049/681/small/default_image.jpg?1678376933",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/079/original/data?1621169751",
+        "discount_description": "25% Off when you sign up for email"
+    },
+    {
+        "name": "Online at Urban Outfitters",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/053/200/original/default_image.jpg?1648495155",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/038/original/data?1524148233",
+        "discount_description": "15% Off your next purchase"
+    }
+]

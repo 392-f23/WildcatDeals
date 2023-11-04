@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at Amazon",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/046/961/original/default_image.jpg?1634837728",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/133/original/data?1631110007",
+        "discount_description": "Free amazon Prime for 6 months"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/570/small/default_image.jpg?1698734958",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "$100 Coupon Bundle"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/571/small/default_image.jpg?1698983914",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "Up to 90% Off Black Friday Sale"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/070/631/small/default_image.jpg?1697113855",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "Get $20 off* in App"
+    },
+    {
+        "name": "Online at Course Hero",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/732/original/default_image.jpg?1663099862",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/061/601/original/data?1663107607",
+        "discount_description": "Free Basic Membership"
+    },
+    {
+        "name": "Online at Chegg",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/073/191/small/default_image.jpg?1698147857",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/100/original/data?1698147415",
+        "discount_description": "20% Student Discount"
+    },
+    {
+        "name": "Online at Papier",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/044/413/original/default_image.jpg?1682415541",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/057/535/original/data?1628148981",
+        "discount_description": "10% Student Discount"
+    },
+    {
+        "name": "Online at Michaels",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/965/original/default_image.jpg?1664226910",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/057/060/original/data?1621169008",
+        "discount_description": "25% Off All Regular Price Purchases"
+    },
+    {
+        "name": "Online at The New York Times",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/047/077/original/default_image.jpg?1635283323",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/058/096/original/data?1635279796",
+        "discount_description": "$1 per week subscription"
+    },
+    {
+        "name": "Online at Harvard Business Review",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/055/306/original/default_image.jpg?1654289333",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/059/556/original/data?1654286922",
+        "discount_description": "$69 per year Digital Academic Subscription"
+    }
+]

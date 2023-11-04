@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at Starbucks",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/050/833/original/default_image.jpg?1677857127",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/342/original/data?1524148113",
+        "discount_description": "Free Coffee"
+    },
+    {
+        "name": "Online at Target",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/048/956/original/default_image.jpg?1673647306",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/773/original/data?1638818507",
+        "discount_description": "Up to 50% Off Clearance"
+    },
+    {
+        "name": "Online at DoorDash",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/040/645/original/default_image.jpg?1597352780",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/055/729/original/data?1597352527",
+        "discount_description": "25% Off Your First Order"
+    },
+    {
+        "name": "Online at Uber Eats",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/579/original/default_image.jpg?1662674236",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/971/original/data?1646764840",
+        "discount_description": "$0 Delivery fee on eligible orders"
+    },
+    {
+        "name": "Online at Grubhub",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/537/small/default_image.jpg?1662646751",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/715/original/data?1646339415",
+        "discount_description": "Free Grubhub+ for a year"
+    },
+    {
+        "name": "Online at Walmart",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/047/930/small/default_image.jpg?1637013879",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/612/original/data?1637011712",
+        "discount_description": "Up to 65% Off Weekly Deals"
+    },
+    {
+        "name": "Online at Domino's Pizza",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/747/small/default_image.jpg?1663105010",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/262/original/data?1524148107",
+        "discount_description": "$7.99 All Pizzas"
+    },
+    {
+        "name": "Online at Chewy",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/051/447/small/default_image.jpg?1697569823",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/058/359/original/data?1662070090",
+        "discount_description": "Up to 50% Student Discount"
+    },
+    {
+        "name": "Online at Sam's Club",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/060/251/original/default_image.jpg?1668613265",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/740/original/data?1668613009",
+        "discount_description": "$19.99 Membership + $20 Travel and Entertainment Credit"
+    },
+    {
+        "name": "Online at DoorDash",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/066/541/original/default_image.jpg?1684534400",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/055/729/original/data?1597352527",
+        "discount_description": "$0 delivery fee on your first order"
+    }
+]

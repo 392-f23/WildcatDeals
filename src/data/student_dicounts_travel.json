@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at Spirit Saver$ Club",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/056/577/original/default_image.jpg?1657656523",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/060/395/original/data?1657656320",
+        "discount_description": "30% Student Discount on Spirit Saver$ Club Membership"
+    },
+    {
+        "name": "Online at FlixBus",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/044/231/original/default_image.jpg?1648728461",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/057/478/original/data?1626381635",
+        "discount_description": "15% Student Discount"
+    },
+    {
+        "name": "Online at Universal Studios Hollywood",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/059/917/small/default_image.jpg?1698824159",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/055/552/original/data?1691224151",
+        "discount_description": "Buy in advance and save"
+    },
+    {
+        "name": "Online at SIXT",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/042/668/original/default_image.jpg?1615196518",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/552/original/data?1691755711",
+        "discount_description": "Up to 25% off for students"
+    },
+    {
+        "name": "Online at Amtrak",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/051/752/original/default_image.jpg?1645650332",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/702/original/data?1645707974",
+        "discount_description": "15% Student Discount"
+    },
+    {
+        "name": "Online at Getaway",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/203/small/default_image.jpg?1661782832",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/059/686/original/data?1670952155",
+        "discount_description": "Students get 15% off to disconnect"
+    },
+    {
+        "name": "Online at Hotels.com",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/038/624/original/default_image.jpg?1691004243",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/002/161/original/data?1683039623",
+        "discount_description": "10% Student Discount"
+    },
+    {
+        "name": "Online at Omio",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/034/928/original/default_image.jpg?1678219425",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/053/871/original/data?1570609409",
+        "discount_description": "Exclusive 5% Student Discount"
+    },
+    {
+        "name": "Online at Secret Flight Club",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/055/452/original/default_image.jpg?1654784045",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/059/646/original/data?1654783928",
+        "discount_description": "70% Student Discount"
+    },
+    {
+        "name": "Online at Hostelworld",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/046/569/original/default_image.jpg?1634142868",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/057/962/original/data?1634142277",
+        "discount_description": "8% OFF the world’s best hostels"
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at Amazon",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/046/961/original/default_image.jpg?1634837728",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/133/original/data?1631110007",
+        "discount_description": "Free amazon Prime for 6 months"
+    },
+    {
+        "name": "Online at Best Buy",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/058/723/original/default_image.jpg?1663086348",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/220/original/data?1610988785",
+        "discount_description": "Back to School Student Hub"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/570/small/default_image.jpg?1698734958",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "$100 Coupon Bundle"
+    },
+    {
+        "name": "Online at Squarespace",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/043/064/small/default_image.jpg?1665663203",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/605/original/data?1620310623",
+        "discount_description": "50% off Annual Plans"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/571/small/default_image.jpg?1698983914",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "Up to 90% Off Black Friday Sale"
+    },
+    {
+        "name": "Online at Urban Outfitters",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/053/200/original/default_image.jpg?1648495155",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/038/original/data?1524148233",
+        "discount_description": "15% Off your next purchase"
+    },
+    {
+        "name": "Online at Hulu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/051/293/original/default_image.jpg?1692840419",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/643/original/data?1695732173",
+        "discount_description": "$1.99/month"
+    },
+    {
+        "name": "Online at HyperX",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/046/706/original/default_image.jpg?1634305759",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/053/982/original/data?1570609423",
+        "discount_description": "15% Student Discount"
+    },
+    {
+        "name": "Online at SHEIN",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/047/709/small/default_image.jpg?1636567298",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/002/232/original/data?1647329562",
+        "discount_description": "Up to 90% Off Sale"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/070/631/small/default_image.jpg?1697113855",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "Get $20 off* in App"
+    }
+]

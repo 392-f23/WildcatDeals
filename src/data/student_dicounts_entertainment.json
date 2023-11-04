@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at LEGO",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/061/623/small/default_image.jpg?1698929977",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/055/839/original/data?1599737478",
+        "discount_description": "FREE LEGO® Ideas Tribute to Galileo Galilei"
+    },
+    {
+        "name": "Online at HBO Max",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/051/747/small/default_image.jpg?1675375240",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/058/556/original/data?1645648220",
+        "discount_description": "Up to 20% Off a 12-month membership"
+    },
+    {
+        "name": "Online at Houston Rockets",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/072/924/small/default_image.jpg?1697582774",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/990/original/data?1697582024",
+        "discount_description": "Up To 50% Off"
+    },
+    {
+        "name": "Online at Universal Studios Hollywood",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/059/917/small/default_image.jpg?1698824159",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/055/552/original/data?1691224151",
+        "discount_description": "Buy in advance and save"
+    },
+    {
+        "name": "Online at Disney+",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/044/966/original/default_image.jpg?1632752438",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/583/original/data?1629458274",
+        "discount_description": "15% Off a 12 month membership"
+    },
+    {
+        "name": "Online at Hulu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/051/293/original/default_image.jpg?1692840419",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/643/original/data?1695732173",
+        "discount_description": "$1.99/month"
+    },
+    {
+        "name": "Online at Ticketmaster",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/046/664/original/default_image.jpg?1687810997",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/043/original/data?1524148092",
+        "discount_description": "Up to 50% Off Ticket Deals"
+    },
+    {
+        "name": "Online at HBO Max",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/051/750/small/default_image.jpg?1677874650",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/058/556/original/data?1645648220",
+        "discount_description": "Free Episodes"
+    },
+    {
+        "name": "Online at Spotify",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/051/461/original/default_image.jpg?1644955870",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/642/original/data?1635268908",
+        "discount_description": "50% off Spotify Premium for Students"
+    },
+    {
+        "name": "Online at Sam's Club",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/060/251/original/default_image.jpg?1668613265",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/740/original/data?1668613009",
+        "discount_description": "$19.99 Membership + $20 Travel and Entertainment Credit"
+    }
+]

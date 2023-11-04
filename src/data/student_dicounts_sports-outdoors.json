@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Online at Nike",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/047/980/original/default_image.jpg?1670358657",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/316/original/data?1669060422",
+        "discount_description": "Students Get Up to 40% Off"
+    },
+    {
+        "name": "Online at Foot Locker",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/040/778/small/default_image.jpg?1620737610",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/001/795/original/data?1598474142",
+        "discount_description": "20% Student Discount"
+    },
+    {
+        "name": "Online at Gymshark",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/054/878/original/default_image.jpg?1692887661",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/002/282/original/data?1570609265",
+        "discount_description": "10% Student Discount Sitewide"
+    },
+    {
+        "name": "Online at ASOS",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/040/906/original/default_image.jpg?1687190068",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/055/828/original/data?1599588769",
+        "discount_description": "10% Student Discount"
+    },
+    {
+        "name": "Online at Lulus",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/041/697/small/default_image.jpg?1692969606",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/158/original/data?1605232695",
+        "discount_description": "10% Student Discount"
+    },
+    {
+        "name": "Online at Houston Rockets",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/072/924/small/default_image.jpg?1697582774",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/990/original/data?1697582024",
+        "discount_description": "Up To 50% Off"
+    },
+    {
+        "name": "Online at Forever 21",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/041/421/original/default_image.jpg?1691790312",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/000/102/original/data?1606252158",
+        "discount_description": "20% Stackable Discount"
+    },
+    {
+        "name": "Online at Adidas",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/046/907/original/default_image.jpg?1652813250",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/058/005/original/data?1690270982",
+        "discount_description": "Exclusive Student Discount"
+    },
+    {
+        "name": "Online at Temu",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/068/571/small/default_image.jpg?1698983914",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/063/284/original/data?1697109779",
+        "discount_description": "Up to 90% Off Black Friday Sale"
+    },
+    {
+        "name": "Online at The North Face",
+        "background_picture_url": "https://cdn.studentbeans.com/offers/redemption_types/default_images/000/047/078/original/default_image.jpg?1635283667",
+        "company_picture_url": "https://cdn.studentbeans.com/offers/brands/logos/000/056/713/original/data?1635279828",
+        "discount_description": "10% Student Discount"
+    }
+]
