@@ -1,65 +1,142 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import { useDisclosure, Button as NextUIButton, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@nextui-org/react";
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { NavigationOutlined } from '@mui/icons-material';
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
-  
+const DealModal = ({ deal, noMap }) => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-export default function DealModal( {deal} ) {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const renderMap = (lat, lng) => {
+    return (
+      <>
+        {!noMap &&
+          <MapContainer center={[lat, lng]} zoom={13} scrollWheelZoom={false} style={{ height: '250px', width: '100%' }}>
+            <TileLayer
+              attribution='&amp;copy <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            <Marker position={[lat, lng]}>
+            </Marker>
+          </MapContainer>
+        }
+        <NextUIButton
+          onPress={() => navigateTo(deal.lat, deal.long)}
+          endContent={<NavigationOutlined />}
+          className="bg-[#4E2A84] hover:bg-[#4E2A84] text-white font-bold py-2 px-4 rounded-md"
+        >
+          Get Directions
+        </NextUIButton>
+      </>
+    );
+  };
+
+  const navigateTo = (destinationLat, destinationLng) => {
+    if (!navigator.geolocation) {
+      alert('Geolocation is not supported by your browser');
+      return;
+    }
+
+    const onSuccess = (position) => {
+      const userLat = position.coords.latitude;
+      const userLng = position.coords.longitude;
+      const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${destinationLat},${destinationLng}`;
+      window.open(googleMapsDirectionsUrl, '_blank');
+    };
+
+    const onError = () => {
+      alert('Unable to retrieve your location. Starting location may be inaccurate. Please allow location access in your browser.');
+      // Just open the google maps directions page without the user's location
+      const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${destinationLat},${destinationLng}`;
+      window.open(googleMapsDirectionsUrl, '_blank');
+    };
+
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+  };
 
   return (
     <div>
-      <Button onClick={handleOpen} size="small">Learn More</Button>
+      <Button onClick={onOpen} size="small">Learn More</Button>
       <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        size="4xl"
+        scrollBehavior="inside"
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            { deal.name }
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.description }
-          </Typography>
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader>{deal.name}</ModalHeader>
+              <ModalBody>
+                <div className='font-bold'>
+                  Description:
+                </div>
+                <div>
+                  {deal.description}
+                </div>
 
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.discount_info }
-          </Typography>
+                <div className='font-bold'>
+                  Discounts:
+                </div>
+                <div>
+                  {deal.discount_info}
+                </div>
+                {deal.address &&
+                  <>
+                    <div className='font-bold'>
+                      Address:
+                    </div>
+                    <div className='flex flex-col gap-4'>
+                      {deal.address}
+                      {deal.lat && deal.long && renderMap(deal.lat, deal.long)}
+                    </div>
+                  </>
+                }
 
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.address }
-          </Typography>
+                {deal.phone &&
+                  <>
+                    <div className='font-bold'>
+                      Phone:
+                    </div>
+                    <div>
+                      <a href={`tel:${deal.phone}`}>{deal.phone}</a>
+                    </div>
+                  </>
+                }
 
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.phone }
-          </Typography>
+                {deal.email &&
+                  <>
+                    <div className='font-bold'>
+                      Email:
+                    </div>
+                    <div>
+                      <a href={`mailto:${deal.email}`}>{deal.email}</a>
+                    </div>
+                  </>
+                }
 
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.email }
-          </Typography>
-
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            { deal.website }
-        </Typography>
-        </Box>
+                <div className='font-bold'>
+                  Website:
+                </div>
+                <div>
+                  <a href={deal.website} target="_blank" rel="noreferrer">{deal.website}</a>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <NextUIButton color="danger" variant="light" onPress={onClose} className="rounded-md">
+                  Close
+                </NextUIButton>
+                <NextUIButton color="primary" onPress={() => window.open(deal.website, "_blank")}
+                className="bg-[#4E2A84] hover:bg-[#4E2A84] text-white font-bold py-2 px-4 rounded-md">
+                  Visit
+                </NextUIButton>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
       </Modal>
     </div>
   );
 }
+
+export default DealModal;

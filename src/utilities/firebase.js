@@ -7,7 +7,10 @@ import {
   onAuthStateChanged,
   signInWithPopup,
   signOut,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail
 } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA0FRG69Iy9LfLzlRay3CueSi-y1tFmbdM",
@@ -22,6 +25,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+export const storage = getStorage(app);
 
 export const useDbData = (path) => {
   const [data, setData] = useState();
@@ -76,12 +80,37 @@ export const writeToDb = (path, value) => {
     .catch((error) => console.log(error));
 };
 
-export const signInWithGoogle = () => {
-  signInWithPopup(getAuth(app), new GoogleAuthProvider());
+export const signInWithGoogle = async (navigate) => {
+  const result = await signInWithPopup(getAuth(app), new GoogleAuthProvider())
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  const credential = GoogleAuthProvider.credentialFromResult(result);
+  const token = credential.accessToken;
+  sessionStorage.setItem(
+    "Auth Token",
+    token
+  );
+
+  const userId = result.user.uid;
+
+  // Check if the user already exists
+  const userExists = await getDbData(`/users/${userId}`);
+  if (!userExists) {
+    // Now upload user's profile to the database
+    const profileData = {
+      displayName: result.user.displayName,
+      email: result.user.email,
+      emailVerified: result.user.emailVerified,
+      phoneNumber: result.user.phoneNumber,
+      photoURL: result.user.photoURL,
+      providerId: result.user.providerId
+    };
+    await writeToDb(`/users/${userId}`, profileData);
+  }
+
+  navigate('/')
 };
 
 const firebaseSignOut = () => signOut(getAuth(app));
-
 export { firebaseSignOut as signOut };
 
 export const useAuthState = () => {
@@ -90,6 +119,63 @@ export const useAuthState = () => {
   useEffect(() => onAuthStateChanged(getAuth(app), setUser), []);
 
   return [user];
+};
+
+export const firebaseSendPasswordResetEmail = (email) => {
+  const auth = getAuth(app);
+  sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert("Password reset email sent!");
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+      alert("Error sending password reset email.");
+    });
+}
+
+export const signInWithEmailAndPassWD = async (inputs, navigate, setOpenAlert) => {
+  const authentication = getAuth(app);
+  try {
+    const result = await signInWithEmailAndPassword(authentication, inputs.email, inputs.password);
+    sessionStorage.setItem(
+      "Auth Token",
+      result._tokenResponse.refreshToken
+    );
+
+    const userId = result.user.uid;
+
+    // Check if the user already exists
+    const userExists = await getDbData(`/users/${userId}`);
+    if (!userExists) {
+      // Now upload user's profile to the database
+      const profileData = {
+        displayName: result.user.displayName,
+        email: result.user.email,
+        emailVerified: result.user.emailVerified,
+        phoneNumber: result.user.phoneNumber,
+        photoURL: result.user.photoURL,
+        providerId: result.user.providerId
+      };
+      await writeToDb(`/users/${userId}`, profileData);
+    }
+
+    navigate("/");
+  }
+  catch (error) {
+    if (error.code == "auth/user-not-found" ||
+      error.code == "auth/wrong-password") {
+      setOpenAlert(true);
+    } else if (error.code == "auth/invalid-login-credentials") {
+      setOpenAlert(true);
+    } else if (error.code == "auth/too-many-requests") {
+      alert("Too many failed login attempts. Please try again later.");
+    }
+    else {
+      console.log(error);
+    }
+  };
 };
 
 export default database;

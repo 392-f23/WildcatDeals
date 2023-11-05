@@ -1,0 +1,42 @@
+/* MapPage.css */
+
+.scrollbar-thin::-webkit-scrollbar {
+    background-color: transparent;
+    /* Make scrollbar transparent */
+    width: 6px;
+    height: 6px;
+}
+
+.scrollbar-thin:hover::-webkit-scrollbar-track {
+    background: #f1f3f4;
+}
+
+.scrollbar-thin:hover::-webkit-scrollbar-thumb {
+    background-color: #70757a;
+    border-radius: 2px;
+}
+
+.scrollbar-thin:hover::-webkit-scrollbar-thumb:hover {
+    background-color: #70757a;
+}
+
+.sidebar {
+    display: none;
+}
+
+.map-container {
+    width: 100%;
+}
+
+/* Larger screens (tablets, desktops) */
+@media (min-width: 768px) {
+    .sidebar {
+        display: block;
+        /* Show the sidebar */
+    }
+
+    .map-container {
+        width: 75%;
+        /* Set the map width to 75% when the sidebar is visible */
+    }
+}
