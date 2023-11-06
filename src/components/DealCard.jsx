@@ -98,7 +98,7 @@ const DealCard = ({
     }
 
     // Combine dollarMatches and dollarOffMatches, if both are found
-    dollarMatches = dollarMatches ? dollarMatches.concat(dollarOffMatches) : dollarOffMatches;
+    dollarMatches = (dollarMatches && dollarOffMatches) ? dollarMatches.concat(dollarOffMatches) : dollarOffMatches;
 
     if (dollarMatches) {
       // Since dollarMatches is an array of strings, we'll want to find the largest value
