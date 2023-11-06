@@ -15,9 +15,9 @@ import { useNavigate } from "react-router-dom";
 import AverageRating from "./AverageRating";
 import ShareIcon from "@mui/icons-material/Share";
 import ShareOnSocial from "react-share-on-social";
-import favicon from "..//favicon.ico";
+import favicon from "../favicon.ico";
 
-const defaultImage = "/public/defaultlogo.png"
+const defaultImage = "/defaultlogo.png"
 
 const DealCard = ({
   deal,
