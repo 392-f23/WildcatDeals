@@ -127,8 +127,9 @@ const MapPage = () => {
               <div
                 onMouseEnter={() => handleMouseEnter(deal.id)}
                 onMouseLeave={handleMouseLeave}
+                key={deal.id}
               >
-                <DealCard key={deal.id} deal={deal} noMap={true} noDealsPageRedirect={true} />
+                <DealCard key={deal.id} deal={deal} noMap={true} noDealsPageRedirect={true} noZoomEffect={true} />
               </div>
             ))}
           </div>
@@ -174,7 +175,7 @@ const MapPage = () => {
               return (
                 <Marker position={[deal.lat, deal.long]} icon={markerIcon} key={deal.id}>
                   <Popup>
-                    <DealCard key={deal.id} deal={deal} noShadow={true} noMap={true} noPaddings={true} noDealsPageRedirect={true} />
+                    <DealCard key={deal.id} deal={deal} noShadow={true} noMap={true} noPaddings={true} noDealsPageRedirect={true} noZoomEffect={true} />
                   </Popup>
                 </Marker>
               );

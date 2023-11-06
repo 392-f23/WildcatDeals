@@ -11,9 +11,11 @@ import {
 } from "@nextui-org/react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { NavigationOutlined } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const DealModal = ({ deal, noMap }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const navigate = useNavigate();
 
   const renderMap = (lat, lng) => {
     return (
@@ -70,7 +72,7 @@ const DealModal = ({ deal, noMap }) => {
 
   return (
     <div>
-      {/* <Button onClick={onOpen} size="small">Learn More</Button> */}
+      <Button onClick={onOpen} size="small">Learn More</Button>
       <Modal
         isOpen={isOpen}
         onOpenChange={onOpenChange}
@@ -133,10 +135,10 @@ const DealModal = ({ deal, noMap }) => {
                 </NextUIButton>
                 <NextUIButton
                   color="primary"
-                  onPress={() => window.open(deal.website, "_blank")}
+                  onPress={() => navigate(`/deals/${deal.id}`)}
                   className="bg-[#4E2A84] hover:bg-[#4E2A84] text-white font-bold py-2 px-4 rounded-md"
                 >
-                  Visit
+                  Details
                 </NextUIButton>
               </ModalFooter>
             </>

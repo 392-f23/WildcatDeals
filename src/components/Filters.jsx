@@ -21,7 +21,7 @@ const MenuProps = {
     },
 };
 
-function getStyles(name, selectedNames, theme) {
+const getStyles = (name, selectedNames, theme) => {
     return {
         fontWeight:
             selectedNames.indexOf(name) === -1

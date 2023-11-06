@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
-import { NavigationOutlined } from '@mui/icons-material';
+import { NavigationOutlined, ShareOutlined } from '@mui/icons-material';
 import Button from '@mui/material/Button';
 import { useNavigate, useParams } from "react-router-dom";
 import useDealsStore from "../utilities/stores";
@@ -8,6 +8,8 @@ import ReviewModal from "../components/ReviewModal";
 import { getDbData } from "../utilities/firebase";
 import { Avatar, Divider, Rating } from "@mui/material";
 import PhotoGallery from "../components/PhotoGallery";
+import ShareOnSocial from "react-share-on-social";
+import favicon from "..//favicon.ico";
 
 const DealsPage = () => {
   let navigate = useNavigate();
@@ -64,8 +66,8 @@ const DealsPage = () => {
   };
 
   const renderMap = (lat, lng) => (
-    <>
-      <MapContainer center={[lat, lng]} zoom={13} scrollWheelZoom={false} className="h-60 md:h-96 w-full mb-2 z-0">
+    <div className="space-y-2">
+      <MapContainer center={[lat, lng]} zoom={13} scrollWheelZoom={false} className="h-60 md:h-96 w-full z-0">
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
@@ -79,7 +81,23 @@ const DealsPage = () => {
       >
         Get Directions
       </Button>
-    </>
+      <ShareOnSocial
+        textToShare={`Check out this awesome deal at ${deal.name} I found on Wildcat Deals! Come and see what you can find!`}
+        link={`${window.location.origin}/deals/${deal.id}`}
+        linkTitle={`Wildcat Deals | ${deal.name}`}
+        linkMetaDesc={deal.description}
+        linkFavicon={favicon}
+        noReferer
+      >
+        <Button
+          variant="contained"
+          endIcon={<ShareOutlined />}
+          fullWidth
+        >
+          Share
+        </Button>
+      </ShareOnSocial>
+    </div>
   );
 
   const fetchReviews = async () => {
