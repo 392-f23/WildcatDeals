@@ -20,19 +20,22 @@ import favicon from "..//favicon.ico";
 
 import defaultImage from './defaultlogo.png';
 
-export default function DealCard({
+const DealCard = ({
   deal,
   noShadow,
   noMap,
   noPaddings,
   noDealsPageRedirect,
-}) {
+  noZoomEffect,
+}) => {
   const [liked, setLiked] = useState(false);
   const user = useEventStore((state) => state.user);
   const navigate = useNavigate();
   const handleCardClick = (e) => {
     e.stopPropagation();
+    if (!noDealsPageRedirect) {
     navigate(`/deals/${deal.id}`);
+    }
   };
 
   // Fetch favorite state from DB
@@ -90,12 +93,12 @@ export default function DealCard({
 
   return (
     <Card
-      className={`w-full ${
-        noPaddings ? "" : "p-2"
-      } transition duration-300 ease-in-out transform hover:scale-105 ${
-        noShadow ? "" : "shadow-md hover:shadow-xl"
-      } cursor-pointer`}
+      className={`w-full ${noPaddings ? "" : "p-2"} 
+      ${noZoomEffect ? "" : "transition duration-300 ease-in-out transform hover:scale-105"}
+      ${noShadow ? "" : "shadow-md hover:shadow-xl hover:z-10"}
+      ${noDealsPageRedirect ? "" : "cursor-pointer"}`}
       onClick={handleCardClick}
+      sx={{ boxShadow: noShadow ? 0 : 1 }}
     >
       <CardMedia
         component="img"
@@ -157,3 +160,5 @@ export default function DealCard({
     </Card>
   );
 }
+
+export default DealCard;
