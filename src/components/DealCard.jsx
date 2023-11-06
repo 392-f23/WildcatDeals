@@ -70,17 +70,45 @@ export default function DealCard({
     // Guard against null or undefined
     if (!description) return null;
 
-    // Match all percentages in the description
-    const matches = description.match(/(\d+)%/g);
+    const percentPattern = /(\d+)%/g;
+    const dollarPattern = /save\s+\$(\d+)/i;
+    const dollarOffPattern = /\$(\d+)\s+off/i;
+    const freePattern = /(free rent)/i;
 
-    // If no matches found, return a default message or null
-    if (!matches) return description;
+    const percentMatches = description.match(percentPattern);
+    let dollarMatches = description.match(dollarPattern);
+    const dollarOffMatches = description.match(dollarOffPattern);
+    const freeMatches = description.match(freePattern);
 
-    // Extract percentage values and find the maximum
-    const maxDiscount = Math.max(...matches.map((match) => parseInt(match)));
+    if (!percentMatches && !dollarMatches && !freeMatches){
+      if (description.length > 100) {
+        return description.substring(0, 100) + "...";
+      } else {
+        return description;
+      }
+    }
 
-    // Construct the desired output
-    return `check out today to receive up to ${maxDiscount}% off`;
+    let deals = [];
+
+    if (percentMatches) {
+      const maxPercent = Math.max(...percentMatches.map(match => parseInt(match)));
+      deals.push(`Get up to ${maxPercent}% off!`);
+    }
+
+    // Combine dollarMatches and dollarOffMatches, if both are found
+    dollarMatches = dollarMatches ? dollarMatches.concat(dollarOffMatches) : dollarOffMatches;
+
+    if (dollarMatches) {
+      // Since dollarMatches is an array of strings, we'll want to find the largest value
+      const maxDollar = Math.max(...dollarMatches.map(match => parseInt(match.match(/\d+/)[0])));
+      deals.push(`Get up to $${maxDollar} off!`);
+    }
+
+    if (freeMatches) {
+      deals.push(`Free rent!`); // Just an example, you might want to customize the text
+    }
+
+    return deals;
   };
 
   // URL for the default image
