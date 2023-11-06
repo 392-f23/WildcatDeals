@@ -17,6 +17,8 @@ import ShareIcon from "@mui/icons-material/Share";
 import ShareOnSocial from "react-share-on-social";
 import favicon from "..//favicon.ico";
 
+import defaultImage from './defaultlogo.png';
+
 export default function DealCard({
   deal,
   noShadow,
@@ -58,6 +60,7 @@ export default function DealCard({
     }
   };
 
+
   const visitWebsite = () => {
     window.open(deal.website);
   };
@@ -79,6 +82,11 @@ export default function DealCard({
     return `check out today to receive up to ${maxDiscount}% off`;
   };
 
+  // URL for the default image
+
+  // Check if the deal has a logo and set the image URL accordingly
+  const imageUrl = deal.logo ? deal.logo : defaultImage;
+
   return (
     <Card
       className={`w-full ${
@@ -88,6 +96,12 @@ export default function DealCard({
       } cursor-pointer`}
       onClick={handleCardClick}
     >
+      <CardMedia
+        component="img"
+        alt={`${deal.name} logo`}
+        height="140" // Adjust the height as necessary
+        image={imageUrl}
+      />
       <CardContent>
         <div className="flex justify-between items-start">
           <div className="flex flex-col mb-2">
