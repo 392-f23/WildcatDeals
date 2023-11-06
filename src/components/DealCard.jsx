@@ -1,29 +1,36 @@
-
-
-import React, { useState, useEffect } from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import React, { useState, useEffect } from "react";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import DealModal from "./DealModal";
 import { Button as NextUIButton } from "@nextui-org/react";
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { getDbData, writeToDb } from "../utilities/firebase";
 import useEventStore from "../utilities/stores";
-import { useNavigate } from 'react-router-dom';
-import AverageRating from './AverageRating';
-import { IconButton } from '@mui/material';
-import ShareIcon from '@mui/icons-material/Share';
-import ShareOnSocial from 'react-share-on-social';
+import { useNavigate } from "react-router-dom";
+import AverageRating from "./AverageRating";
+import { IconButton } from "@mui/material";
+import ShareIcon from "@mui/icons-material/Share";
+import ShareOnSocial from "react-share-on-social";
 import favicon from "..//favicon.ico";
 
-export default function DealCard({ deal, noShadow, noMap, noPaddings, noDealsPageRedirect }) {
+export default function DealCard({
+  deal,
+  noShadow,
+  noMap,
+  noPaddings,
+  noDealsPageRedirect,
+}) {
   const [liked, setLiked] = useState(false);
   const user = useEventStore((state) => state.user);
   const navigate = useNavigate();
+  const handleCardClick = (e) => {
+    e.stopPropagation();
+    navigate(`/deals/${deal.id}`);
+  };
 
   // Fetch favorite state from DB
   useEffect(() => {
@@ -66,20 +73,21 @@ export default function DealCard({ deal, noShadow, noMap, noPaddings, noDealsPag
     if (!matches) return description;
 
     // Extract percentage values and find the maximum
-    const maxDiscount = Math.max(...matches.map(match => parseInt(match)));
+    const maxDiscount = Math.max(...matches.map((match) => parseInt(match)));
 
     // Construct the desired output
     return `check out today to receive up to ${maxDiscount}% off`;
-  }
+  };
 
   return (
-    <Card sx={{ boxShadow: noShadow ? 0 : 1 }} className={`w-full ${noPaddings ? "" : "p-2"}`} >
-      {/* <CardMedia
-        component="img"
-        alt="green iguana"
-        height="100"
-        image="/static/images/cards/contemplative-reptile.jpg"
-      /> */}
+    <Card
+      className={`w-full ${
+        noPaddings ? "" : "p-2"
+      } transition duration-300 ease-in-out transform hover:scale-105 ${
+        noShadow ? "" : "shadow-md hover:shadow-xl"
+      } cursor-pointer`}
+      onClick={handleCardClick}
+    >
       <CardContent>
         <div className="flex justify-between items-start">
           <div className="flex flex-col mb-2">
@@ -97,7 +105,7 @@ export default function DealCard({ deal, noShadow, noMap, noPaddings, noDealsPag
               onPress={toggleFavorite}
             >
               {liked ? (
-                <FavoriteIcon />
+                <FavoriteIcon style={{ color: "#4E2A84" }} />
               ) : (
                 <FavoriteBorderIcon />
               )}
@@ -108,32 +116,28 @@ export default function DealCard({ deal, noShadow, noMap, noPaddings, noDealsPag
           {getMaxDiscount(deal.discount_info)}
         </Typography>
       </CardContent>
-      <ShareOnSocial
-        textToShare={`Check out this awesome deal at ${deal.name} I found on Wildcat Deals! Come and see what you can find!`}
-        link={`${window.location.origin}/deals/${deal.id}`}
-        linkTitle={`Wildcat Deals | ${deal.name}`}
-        linkMetaDesc={deal.description}
-        linkFavicon={favicon}
-        noReferer
-      >
-        <IconButton aria-label="share" className='translate-x-2 translate-y-10 absolute right-0 top-0'>
-          <ShareIcon />
-        </IconButton>
-      </ShareOnSocial>
-      <CardActions sx={{ justifyContent: 'center' }}>
-        <Button size="small" onClick={visitWebsite}>Visit Website</Button>
-        {!noDealsPageRedirect ? (
-          <>
-            <div className='sm:hidden'>
-              <DealModal deal={deal} noMap={noMap} />
-            </div>
-            <div className='hidden md:flex'>
-              <Button size="small" onClick={() => navigate(`/deals/${deal.id}`)}>Learn More</Button>
-            </div>
-          </>
-        ) :
-          <DealModal deal={deal} noMap={noMap} />
-        }
+      <div onClick={(e) => e.stopPropagation()}>
+        <ShareOnSocial
+          textToShare={`Check out this awesome deal at ${deal.name} I found on Wildcat Deals! Come and see what you can find!`}
+          link={`${window.location.origin}/deals/${deal.id}`}
+          linkTitle={`Wildcat Deals | ${deal.name}`}
+          linkMetaDesc={deal.description}
+          linkFavicon={favicon}
+          noReferer
+        >
+          <IconButton
+            aria-label="share"
+            className="translate-x-2 translate-y-10 absolute right-0 top-0"
+          >
+            <ShareIcon />
+          </IconButton>
+        </ShareOnSocial>
+      </div>
+      <CardActions sx={{ justifyContent: "center" }}>
+        <Button size="small" onClick={visitWebsite}>
+          Visit Website
+        </Button>
+        {noDealsPageRedirect && <DealModal deal={deal} noMap={noMap} />}
       </CardActions>
     </Card>
   );
