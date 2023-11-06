@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import DealModal from "./DealModal";
-import { Button as NextUIButton } from "@nextui-org/react";
+import { Image, Button as NextUIButton } from "@nextui-org/react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { getDbData, writeToDb } from "../utilities/firebase";
@@ -18,7 +17,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import ShareOnSocial from "react-share-on-social";
 import favicon from "..//favicon.ico";
 
-import defaultImage from './defaultlogo.png';
+const defaultImage = "/public/defaultlogo.png"
 
 const DealCard = ({
   deal,
@@ -86,8 +85,6 @@ const DealCard = ({
     return `check out today to receive up to ${maxDiscount}% off`;
   };
 
-  // URL for the default image
-
   // Check if the deal has a logo and set the image URL accordingly
   const imageUrl = deal.logo ? deal.logo : defaultImage;
 
@@ -100,14 +97,9 @@ const DealCard = ({
       onClick={handleCardClick}
       sx={{ boxShadow: noShadow ? 0 : 1 }}
     >
-      <CardMedia
-        component="img"
-        alt={`${deal.name} logo`}
-        height="140" // Adjust the height as necessary
-        image={imageUrl}
-      />
       <CardContent>
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-start gap-4 mb-2">
+          <Image src={imageUrl} alt={`${deal.name} logo`} fallbackSrc={defaultImage} width={100} />
           <div className="flex flex-col mb-2">
             <Typography variant="h5" component="div">
               {deal.name}
