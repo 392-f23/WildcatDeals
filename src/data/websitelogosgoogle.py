@@ -26,7 +26,7 @@ def get_logo_url(company_name):
 
 
 def save_to_json(data):
-    with open('src/data/websitelogos1.json', 'w') as f:
+    with open('src/data/websitelogos2.json', 'w') as f:
         json.dump(data, f, indent=2)
 
 ''' OLD CODE
@@ -58,7 +58,7 @@ except FileNotFoundError:
     logo_data = {}
 
 # Get the start index
-start_index = next((index for (index, d) in enumerate(main_data) if d['name'] == 'Kovet Boutique'), None)
+start_index = next((index for (index, d) in enumerate(main_data) if d['name'] == 'Prairie Moon'), None)
 
 # Check if the start_name exists in the data
 if start_index is not None:
