@@ -70,9 +70,11 @@ if start_index is not None:
         item['logo'] = logo_url
         # Also update the logo_data with the new or updated logo URL
         logo_data[item['name']] = logo_url
+        
+    print(logo_data)
 
 # Now save the updated main_data to a new merged JSON file
-save_to_json(main_data, 'src/data/merged.json')
+save_to_json(main_data)
 
 # You might also want to save the updated logo URLs to the websitelogos1.json
-save_to_json(logo_data, 'src/data/websitelogos1.json')
+save_to_json(logo_data)
