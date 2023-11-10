@@ -42,6 +42,7 @@
     "react-share-on-social": "^1.0.12",
     "sort-by": "^1.2.0",
     "uuid": "^9.0.1",
+    "vanilla-jsoneditor": "^0.18.12",
     "yet-another-react-lightbox": "^3.15.0",
     "zustand": "^4.4.6"
   },

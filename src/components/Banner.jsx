@@ -120,8 +120,11 @@ const Banner = () => {
             >
               {pages.map((page) =>
                 (!page.needAuth || user) && (
-                  <MenuItem key={`nav-m-${page.name}`} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center" onClick={() => navigate(page.link)}>
+                  <MenuItem key={`nav-m-${page.name}`} onClick={() => {
+                    navigate(page.link);
+                    handleCloseNavMenu();
+                  }}>
+                    <Typography textAlign="center">
                       {page.name}
                     </Typography>
                   </MenuItem>

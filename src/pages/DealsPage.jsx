@@ -10,12 +10,15 @@ import { Avatar, Divider, Rating } from "@mui/material";
 import PhotoGallery from "../components/PhotoGallery";
 import ShareOnSocial from "react-share-on-social";
 import favicon from "../favicon.ico";
+import EditDealModal from "../components/EditDealModal";
+import { useProfile } from "../utilities/profile";
 
 const DealsPage = () => {
   let navigate = useNavigate();
   let { dealsId } = useParams();
   const deal = useDealsStore((state) => state.business.find(d => `${d.id}` === `${dealsId}`));
   const user = useDealsStore((state) => state.user);
+  const [profile, profileLoading, profileError] = useProfile();
 
   const [reviews, setReviews] = useState([]);
   const [averageRating, setAverageRating] = useState(null);
@@ -129,9 +132,9 @@ const DealsPage = () => {
       <nav className="text-gray-500 mb-4 mt-12" aria-label="Breadcrumb">
         <ol className="list-none p-0 inline-flex">
           <li className="flex items-center">
-          <span className="text-sm cursor-pointer" onClick={() => navigate("/")}>
+            <span className="text-sm cursor-pointer" onClick={() => navigate("/")}>
               Wildcat Advantage
-              </span>
+            </span>
             <span className="mx-2">/</span>
           </li>
           <li className="flex items-center">
@@ -172,10 +175,15 @@ const DealsPage = () => {
                   <a href={`mailto:${deal.email}`} className="ml-2 text-blue-600 hover:text-blue-800">{deal.email}</a>
                 </div>
               )}
-              <div className="mt-4">
-                <span className="text-gray-800 font-semibold">Website:</span>
-                <a href={deal.website} target="_blank" rel="noreferrer" className="ml-2 text-blue-600 hover:text-blue-800">{deal.website}</a>
-              </div>
+              {deal.website && (
+                <div className="mt-4">
+                  <span className="text-gray-800 font-semibold">Website:</span>
+                  <a href={deal.website} target="_blank" rel="noreferrer" className="ml-2 text-blue-600 hover:text-blue-800">{deal.website}</a>
+                </div>
+              )}
+              {profile?.isAdmin && (
+                <EditDealModal deal={deal} />
+              )}
             </div>
           </div>
         </div>

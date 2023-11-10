@@ -65,7 +65,11 @@ const DealCard = ({
 
 
   const visitWebsite = () => {
-    window.open(deal.website);
+    if (!deal.website) {
+      window.open(`/deals/${deal.id}`); // Open the deal page if there's no website
+    } else {
+      window.open(deal.website);
+    };
   };
 
   const getMaxDiscount = (description) => {
@@ -144,15 +148,15 @@ const DealCard = ({
       <CardActions className="flex justify-between">
         <div onClick={(e) => e.stopPropagation()}>
           {user && (
-              <IconButton aria-label="add to favorites"
-                onClick={toggleFavorite}
-              >
-                {liked ? (
-                  <FavoriteIcon />
-                ) : (
-                  <FavoriteBorderIcon />
-                )}
-              </IconButton>
+            <IconButton aria-label="add to favorites"
+              onClick={toggleFavorite}
+            >
+              {liked ? (
+                <FavoriteIcon />
+              ) : (
+                <FavoriteBorderIcon />
+              )}
+            </IconButton>
           )}
           <ShareOnSocial
             textToShare={`Check out this awesome deal at ${deal.name} I found on Wildcat Deals! Come and see what you can find!`}
@@ -163,16 +167,16 @@ const DealCard = ({
             noReferer
             onClick={(e) => e.stopPropagation()}
           >
-              <IconButton aria-label="share" onClick={(e) => e.stopPropagation()}>
-                <ShareIcon />
-              </IconButton>
+            <IconButton aria-label="share" onClick={(e) => e.stopPropagation()}>
+              <ShareIcon />
+            </IconButton>
           </ShareOnSocial>
         </div>
         <div onClick={(e) => e.stopPropagation()}>
-            <Button size="small" onClick={visitWebsite}>
-              Visit Website
-            </Button>
-            {noDealsPageRedirect && <DealModal deal={deal} noMap={noMap} />}
+          <Button size="small" onClick={visitWebsite}>
+            Visit Website
+          </Button>
+          {noDealsPageRedirect && <DealModal deal={deal} noMap={noMap} />}
         </div>
       </CardActions>
 
