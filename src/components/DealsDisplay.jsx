@@ -30,7 +30,7 @@ const DealsDisplay = ({ deals }) => {
   return (
     <div className="deals-container">
       <div className="events-grid flex justify-center w-full mt-6 px-6">
-        <Masonry columns={{ xs: 1, sm: 3, md: 4, lg: 5, xl: 6 }} spacing={2}>
+        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} >
           {currentDeals.map((deal) => (
             <div key={`deal-${deal.id}`} className="event-card flex justify-center">
               <DealCard deal={deal} />

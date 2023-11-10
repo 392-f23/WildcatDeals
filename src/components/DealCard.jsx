@@ -118,12 +118,12 @@ const DealCard = ({
 
   return (
     <Card
-      className={`w-full ${noPaddings ? "" : "p-2"} 
+      className={`w-full ${noPaddings ? "" : "p-2"}
       ${noZoomEffect ? "" : "transition duration-300 ease-in-out transform hover:scale-105"}
       ${noShadow ? "" : "shadow-md hover:shadow-xl hover:z-10"}
       ${noDealsPageRedirect ? "" : "cursor-pointer"}
-      min-w-[300px]
-      `}
+      min-w-[150px] sm:min-w-[200px] md:min-w-[250px] lg:min-w-[300px]`}
+    
       onClick={handleCardClick}
       sx={{ boxShadow: noShadow ? 0 : 1 }}
     >
