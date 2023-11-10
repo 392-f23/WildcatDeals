@@ -112,7 +112,7 @@ const Form = () => {
 
                         <div className="right-side">
                             <div className="logo-login text-[#4E2A84]">
-                                <PetsIcon sx={{ mr: 1 }} />
+                                <PetsIcon sx={{ mr: 1 }} onClick={() => navigate("/")} />
                                 <Typography
                                     variant="h6"
                                     noWrap

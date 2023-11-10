@@ -66,7 +66,7 @@ const Banner = () => {
     <AppBar position="fixed" sx={{ zIndex: 50 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <PetsIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <PetsIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} onClick={() => navigate("/")} />
           <Typography
             variant="h6"
             noWrap
@@ -121,15 +121,15 @@ const Banner = () => {
               {pages.map((page) =>
                 (!page.needAuth || user) && (
                   <MenuItem key={`nav-m-${page.name}`} onClick={handleCloseNavMenu}>
-                    <Button variant="text" onClick={() => navigate(page.link)}>
+                    <Typography textAlign="center" onClick={() => navigate(page.link)}>
                       {page.name}
-                    </Button>
+                    </Typography>
                   </MenuItem>
                 )
               )}
             </Menu>
           </Box>
-          <PetsIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <PetsIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} onClick={() => navigate("/")} />
           {/* <Typography
             variant="h5"
             noWrap

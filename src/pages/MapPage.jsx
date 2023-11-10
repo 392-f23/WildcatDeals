@@ -111,8 +111,16 @@ const MapPage = () => {
     )
   }
 
+  // pervent scrolling the page
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    }
+  }, []);
+
   return (
-    <div className="flex h-screen">
+    <div className="flex h-[100dvh]">
       {position && (
         <motion.div
           className="sidebar w-1/4 bg-white overflow-auto scrollbar-thin"
@@ -136,58 +144,57 @@ const MapPage = () => {
         </motion.div>
       )}
 
-      <div className={position ? "w-3/4 map-container" : "w-full"}>
-        <MapContainer
-          center={[42.05103, -87.67788]}
-          zoom={15}
-          style={{ width: "100%", height: "100%", zIndex: 0 }}
-          zoomControl={false}
-        >
-          <LayersControl position="bottomright">
-            <LayersControl.Overlay name="Transit">
-              <GLayer apiKey={assembly} type={'roadmap'} googleMapsAddLayers={[{ name: 'TransitLayer' }]} />
-            </LayersControl.Overlay>
-            <LayersControl.Overlay name="Cycling">
-              <GLayer apiKey={assembly} type={'roadmap'} googleMapsAddLayers={[{ name: 'BicyclingLayer' }]} />
-            </LayersControl.Overlay>
-            <LayersControl.Overlay name="Traffic">
-              <GLayer apiKey={assembly} type={'roadmap'} googleMapsAddLayers={[{ name: 'TrafficLayer' }]} />
-            </LayersControl.Overlay>
-            <LayersControl.Overlay name="Hybrid">
-              <GLayer apiKey={assembly} type={'hybrid'} />
-            </LayersControl.Overlay>
-            <LayersControl.Overlay name="Satellite">
-              <GLayer apiKey={assembly} type={'satellite'} />
-            </LayersControl.Overlay>
-          </LayersControl>
+      <MapContainer
+        center={[42.05103, -87.67788]}
+        zoom={15}
+        style={{ zIndex: 0 }}
+        zoomControl={false}
+        className={position ? "w-3/4 map-container" : "w-full"}
+      >
+        <LayersControl position="bottomright">
+          <LayersControl.Overlay name="Transit">
+            <GLayer apiKey={assembly} type={'roadmap'} googleMapsAddLayers={[{ name: 'TransitLayer' }]} />
+          </LayersControl.Overlay>
+          <LayersControl.Overlay name="Cycling">
+            <GLayer apiKey={assembly} type={'roadmap'} googleMapsAddLayers={[{ name: 'BicyclingLayer' }]} />
+          </LayersControl.Overlay>
+          <LayersControl.Overlay name="Traffic">
+            <GLayer apiKey={assembly} type={'roadmap'} googleMapsAddLayers={[{ name: 'TrafficLayer' }]} />
+          </LayersControl.Overlay>
+          <LayersControl.Overlay name="Hybrid">
+            <GLayer apiKey={assembly} type={'hybrid'} />
+          </LayersControl.Overlay>
+          <LayersControl.Overlay name="Satellite">
+            <GLayer apiKey={assembly} type={'satellite'} />
+          </LayersControl.Overlay>
+        </LayersControl>
 
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          />
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        />
 
-          <ZoomControl position="bottomright" />
+        <ZoomControl position="bottomright" />
 
-          {allDeals.map((deal) => {
-            const markerIcon = hoveredCardId === deal.id ? orangeIcon : violetIcon;
+        {allDeals.map((deal) => {
+          const markerIcon = hoveredCardId === deal.id ? orangeIcon : violetIcon;
 
-            if (deal.lat && deal.long) {
-              return (
-                <Marker position={[deal.lat, deal.long]} icon={markerIcon} key={deal.id}>
-                  <Popup>
-                    <DealCard key={deal.id} deal={deal} noShadow={true} noMap={true} noPaddings={true} noDealsPageRedirect={true} noZoomEffect={true} />
-                  </Popup>
-                </Marker>
-              );
-            }
-            return null;
-          })}
+          if (deal.lat && deal.long) {
+            return (
+              <Marker position={[deal.lat, deal.long]} icon={markerIcon} key={deal.id}>
+                <Popup>
+                  <DealCard key={deal.id} deal={deal} noShadow={true} noMap={true} noPaddings={true} noDealsPageRedirect={true} noZoomEffect={true} />
+                </Popup>
+              </Marker>
+            );
+          }
+          return null;
+        })}
 
 
-          <LocationMarker />
+        <LocationMarker />
 
-        </MapContainer>
-      </div>
+      </MapContainer>
     </div>
   );
 };

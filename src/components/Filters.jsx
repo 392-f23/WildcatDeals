@@ -9,6 +9,8 @@ import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import useDealsStore from '../utilities/stores';
+import { getDbData } from '../utilities/firebase';
+import { Rating } from '@mui/material';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -35,6 +37,7 @@ const Filters = ({ deals, setFilteredDeals }) => {
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedAudiences, setSelectedAudiences] = useState([]);
     const [selectedCities, setSelectedCities] = useState([]);
+    const [selectedRating, setSelectedRating] = useState(0);
     const setSearchQuery = useDealsStore((state) => state.setSearchQuery);
     const searchQuery = useDealsStore((state) => state.searchQuery);
 
@@ -47,8 +50,24 @@ const Filters = ({ deals, setFilteredDeals }) => {
     uniqueAudiences = uniqueAudiences.filter(audience => audience !== '');
     uniqueCities = uniqueCities.filter(city => city !== '');
 
-    const applyFilters = () => {
+    const applyFilters = async () => {
         let filtered = deals;
+
+        // Filter by rating
+        if (selectedRating > 0) {
+            const reviewsData = await getDbData('/reviews');
+            if (reviewsData) {
+                const reviewed_ids = Object.keys(reviewsData);
+
+                // filter out deals that don't have any reviews
+                filtered = filtered.filter(deal => reviewed_ids.includes(String(deal.id)));
+
+                // filter out deals that don't have the minimum rating
+                filtered = filtered.filter(deal => reviewsData[deal.id].average >= selectedRating);
+            } else {
+                filtered = [];
+            }
+        }
 
         // Filter by categories
         if (selectedCategories.length > 0) {
@@ -91,7 +110,7 @@ const Filters = ({ deals, setFilteredDeals }) => {
     // Whenever a filter changes, apply the filters again
     useEffect(() => {
         applyFilters();
-    }, [selectedCategories, selectedAudiences, selectedCities, searchQuery]);
+    }, [selectedCategories, selectedAudiences, selectedCities, searchQuery, selectedRating]);
 
     // When first loading the page, set the search query to empty
     useEffect(() => {
@@ -146,7 +165,7 @@ const Filters = ({ deals, setFilteredDeals }) => {
                     </FormControl>
                 </div>
 
-                <FormControl fullWidth className="md:w-1/2 md:pr-2">
+                <FormControl fullWidth className="md:w-1/3 md:pr-2">
                     <InputLabel id="audience-multiple-chip-label">Select Audience</InputLabel>
                     <Select
                         labelId="audience-multiple-chip-label"
@@ -176,7 +195,7 @@ const Filters = ({ deals, setFilteredDeals }) => {
                     </Select>
                 </FormControl>
 
-                <FormControl fullWidth className="md:w-1/2 md:pr-2">
+                <FormControl fullWidth className="md:w-1/3 md:pr-2">
                     <InputLabel id="city-multiple-chip-label">Select City</InputLabel>
                     <Select
                         labelId="city-multiple-chip-label"
@@ -203,6 +222,25 @@ const Filters = ({ deals, setFilteredDeals }) => {
                                 {city}
                             </MenuItem>
                         ))}
+                    </Select>
+                </FormControl>
+
+                <FormControl fullWidth className="md:w-1/3 md:pr-2">
+                    <InputLabel id="rating-label">Minimum Rating</InputLabel>
+                    <Select
+                        labelId="rating-label"
+                        id="rating"
+                        value={selectedRating}
+                        onChange={(e) => setSelectedRating(e.target.value)}
+                        input={<OutlinedInput id="select-rating" label="Minimum Rating" />}
+                        MenuProps={MenuProps}
+                    >
+                        <MenuItem value={0}>Any</MenuItem>
+                        <MenuItem value={1}><Rating name="read-only" value={1} readOnly size="small" /></MenuItem>
+                        <MenuItem value={2}><Rating name="read-only" value={2} readOnly size="small" /></MenuItem>
+                        <MenuItem value={3}><Rating name="read-only" value={3} readOnly size="small" /></MenuItem>
+                        <MenuItem value={4}><Rating name="read-only" value={4} readOnly size="small" /></MenuItem>
+                        <MenuItem value={5}><Rating name="read-only" value={5} readOnly size="small" /></MenuItem>
                     </Select>
                 </FormControl>
             </Box>

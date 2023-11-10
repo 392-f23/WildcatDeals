@@ -9,7 +9,7 @@ import { getDbData } from "../utilities/firebase";
 import { Avatar, Divider, Rating } from "@mui/material";
 import PhotoGallery from "../components/PhotoGallery";
 import ShareOnSocial from "react-share-on-social";
-import favicon from "..//favicon.ico";
+import favicon from "../favicon.ico";
 
 const DealsPage = () => {
   let navigate = useNavigate();
@@ -129,9 +129,9 @@ const DealsPage = () => {
       <nav className="text-gray-500 mb-4 mt-12" aria-label="Breadcrumb">
         <ol className="list-none p-0 inline-flex">
           <li className="flex items-center">
-            <Button variant="text" onClick={() => navigate("/")} className="text-sm">
+          <span className="text-sm cursor-pointer" onClick={() => navigate("/")}>
               Wildcat Advantage
-            </Button>
+              </span>
             <span className="mx-2">/</span>
           </li>
           <li className="flex items-center">
@@ -187,7 +187,7 @@ const DealsPage = () => {
           {averageRating && (
             <div className="mb-3">
               <div className="flex flex-row gap-1">
-                {averageRating} <Rating name="read-only" value={averageRating} readOnly size="small" className="translate-y-0.5"></Rating>
+                {averageRating.toFixed(1)} <Rating name="read-only" value={averageRating} readOnly size="small" className="translate-y-0.5"></Rating>
                 <div className="text-gray-400">{`(${reviews.length})`}</div></div>
             </div>
           )}

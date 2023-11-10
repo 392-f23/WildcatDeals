@@ -18,7 +18,7 @@ const AverageRating = ({ dealId }) => {
     fetchRatingData();
   }, [dealId]);
 
-  if (averageRating === null) {
+  if (averageRating === null || averageRating === 0) {
     return null;
   }
 

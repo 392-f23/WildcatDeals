@@ -10,6 +10,15 @@ const LoginPage = () => {
             navigate('/');
         }
     }, [navigate])
+
+    // pervent scrolling
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = 'unset';
+        }
+    }, [])
+
     return (
         <Form />
     )

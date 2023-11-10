@@ -9,7 +9,12 @@ import Banner from "../components/Banner";
 const Root = () => {
     const setBusiness = useDealsStore((state) => state.setBusiness);
     const business = useDealsStore((state) => state.business);
-    const Location = useLocation();
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
 
     useEffect(() => {
         getDbData("/businesses").then((data) => {
@@ -21,7 +26,7 @@ const Root = () => {
 
     return (
         <div className="App min-h-screen flex flex-col">
-            {Location.pathname !== '/login' &&
+            {pathname !== '/login' &&
                 <Banner />
             }
             <div className="flex-grow">
@@ -33,7 +38,7 @@ const Root = () => {
                     </div>
                 )}
             </div>
-            {Location.pathname !== '/map' && Location.pathname !== '/login' &&
+            {pathname !== '/map' && pathname !== '/login' &&
                 <footer className="w-full p-8">
                     <p className="text-center text-default-500 text-sm">Northwestern University</p>
                     <p className="text-center text-default-500 text-sm">© {new Date().getFullYear()} Wildcat Deals</p>

@@ -6,7 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import DealModal from "./DealModal";
-import { Image, Button as NextUIButton } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { getDbData, writeToDb } from "../utilities/firebase";
@@ -33,7 +33,7 @@ const DealCard = ({
   const handleCardClick = (e) => {
     e.stopPropagation();
     if (!noDealsPageRedirect) {
-    navigate(`/deals/${deal.id}`);
+      navigate(`/deals/${deal.id}`);
     }
   };
 
@@ -82,7 +82,7 @@ const DealCard = ({
     const dollarOffMatches = description.match(dollarOffPattern);
     const freeMatches = description.match(freePattern);
 
-    if (!percentMatches && !dollarMatches && !freeMatches){
+    if (!percentMatches && !dollarMatches && !freeMatches) {
       if (description.length > 100) {
         return description.substring(0, 100) + "...";
       } else {
@@ -118,17 +118,16 @@ const DealCard = ({
 
   return (
     <Card
-      className={`w-full ${noPaddings ? "" : "p-2"}
+      className={`w-full ${noPaddings ? "min-w-[300px]" : "p-2"} 
       ${noZoomEffect ? "" : "transition duration-300 ease-in-out transform hover:scale-105"}
-      ${noShadow ? "" : "shadow-md hover:shadow-xl hover:z-10"}
+      ${noShadow ? "" : "shadow-md hover:shadow-xl z-0 hover:z-10"}
       ${noDealsPageRedirect ? "" : "cursor-pointer"}
-      min-w-[150px] sm:min-w-[200px] md:min-w-[250px] lg:min-w-[300px]`}
-    
+      `}
       onClick={handleCardClick}
       sx={{ boxShadow: noShadow ? 0 : 1 }}
     >
       <CardContent>
-        <div className="flex justify-between items-start gap-4 mb-2">
+        <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-2">
           <Image src={imageUrl} alt={`${deal.name} logo`} fallbackSrc={defaultImage} width={100} />
           <div className="flex flex-col mb-2">
             <Typography variant="h5" component="div">
@@ -136,49 +135,53 @@ const DealCard = ({
             </Typography>
             <AverageRating dealId={deal.id} />
           </div>
-          {user && (
-            <NextUIButton
-              isIconOnly
-              className="text-default-900/60 data-[hover]:bg-foreground/10 -translate-y-2 translate-x-2"
-              radius="full"
-              variant="light"
-              onPress={toggleFavorite}
-            >
-              {liked ? (
-                <FavoriteIcon style={{ color: "#4E2A84" }} />
-              ) : (
-                <FavoriteBorderIcon />
-              )}
-            </NextUIButton>
-          )}
         </div>
         <Typography variant="body1" color="text.secondary">
           {getMaxDiscount(deal.discount_info)}
         </Typography>
       </CardContent>
-      <div onClick={(e) => e.stopPropagation()}>
-        <ShareOnSocial
-          textToShare={`Check out this awesome deal at ${deal.name} I found on Wildcat Deals! Come and see what you can find!`}
-          link={`${window.location.origin}/deals/${deal.id}`}
-          linkTitle={`Wildcat Deals | ${deal.name}`}
-          linkMetaDesc={deal.description}
-          linkFavicon={favicon}
-          noReferer
-        >
-          <IconButton
-            aria-label="share"
-            className="translate-x-2 translate-y-10 absolute right-0 top-0"
+
+      <CardActions className="flex justify-between">
+        <div onClick={(e) => e.stopPropagation()}>
+          {user && (
+              <IconButton aria-label="add to favorites"
+                onClick={toggleFavorite}
+              >
+                {liked ? (
+                  <FavoriteIcon />
+                ) : (
+                  <FavoriteBorderIcon />
+                )}
+              </IconButton>
+          )}
+          <ShareOnSocial
+            textToShare={`Check out this awesome deal at ${deal.name} I found on Wildcat Deals! Come and see what you can find!`}
+            link={`${window.location.origin}/deals/${deal.id}`}
+            linkTitle={`Wildcat Deals | ${deal.name}`}
+            linkMetaDesc={deal.description}
+            linkFavicon={favicon}
+            noReferer
+            onClick={(e) => e.stopPropagation()}
           >
-            <ShareIcon />
-          </IconButton>
-        </ShareOnSocial>
-      </div>
-      <CardActions sx={{ justifyContent: "center" }}>
+              <IconButton aria-label="share" onClick={(e) => e.stopPropagation()}>
+                <ShareIcon />
+              </IconButton>
+          </ShareOnSocial>
+        </div>
+        <div onClick={(e) => e.stopPropagation()}>
+            <Button size="small" onClick={visitWebsite}>
+              Visit Website
+            </Button>
+            {noDealsPageRedirect && <DealModal deal={deal} noMap={noMap} />}
+        </div>
+      </CardActions>
+
+      {/* <CardActions sx={{ justifyContent: "center" }}>
         <Button size="small" onClick={visitWebsite}>
           Visit Website
         </Button>
         {noDealsPageRedirect && <DealModal deal={deal} noMap={noMap} />}
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }

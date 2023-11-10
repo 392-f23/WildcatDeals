@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { useEffect, useState, useCallback } from "react";
-import { getDatabase, onValue, ref, update, get } from "firebase/database";
+import { getDatabase, onValue, ref, update, remove, get } from "firebase/database";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -77,6 +77,12 @@ export const useDbUpdate = (path) => {
 export const writeToDb = (path, value) => {
   update(ref(database, path), value)
     .then(() => console.log("Successfully written to database.", value))
+    .catch((error) => console.log(error));
+};
+
+export const removeDbData = (path) => {
+  remove(ref(database, path))
+    .then(() => console.log("Successfully removed from database."))
     .catch((error) => console.log(error));
 };
 

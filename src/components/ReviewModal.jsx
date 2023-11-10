@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button as NextUIButton, Popover, Modal, ModalHeader, ModalBody, ModalFooter, useDisclosure, ModalContent, PopoverTrigger, PopoverContent } from "@nextui-org/react";
 import { Avatar, Rating, TextField } from '@mui/material';
-import { writeToDb, getDbData } from "../utilities/firebase";
+import { writeToDb, getDbData, removeDbData } from "../utilities/firebase";
 import useEventStore from "../utilities/stores";
 import { AddAPhotoOutlined, InfoOutlined, RateReviewOutlined } from '@mui/icons-material';
 import { DropzoneArea } from "mui-file-dropzone";
@@ -18,6 +18,7 @@ const ReviewModal = ({ deal, fetchReviews }) => {
     const user = useEventStore((state) => state.user);
     const [files, setFiles] = useState([]);
     const [showImageUpload, setShowImageUpload] = useState(false);
+    const [userReviewed, setUserReviewed] = useState(false);
 
     // Function to fetch the existing review
     const fetchUserReview = async () => {
@@ -28,22 +29,70 @@ const ReviewModal = ({ deal, fetchReviews }) => {
             setInitialRating(userReview.rating || 0);
             setReviewText(userReview.text || '');
             setInitialReviewText(userReview.text || '');
+            setUserReviewed(true);
+        } else {
+            setUserReviewed(false);
         }
     };
 
     useEffect(() => {
-        if (isOpen && user) {
+        if (user) {
             fetchUserReview();
         }
-    }, [isOpen, user]);
+    }, [user]);
 
     const handleClose = () => {
         onOpenChange(false);
         setError('');
-        setRating(initialRating);     // Reset the rating to initial value
-        setReviewText(initialReviewText); // Reset the review text to initial value
+        setRating(0);     // Reset the rating to initial value
+        setReviewText(''); // Reset the review text to initial value
         fetchReviews(); // Fetch reviews again
+        fetchUserReview();
         setShowImageUpload(false);
+    };
+
+    const handleDelete = async () => {
+        // ask for confirmation
+        if (!window.confirm('Are you sure you want to delete your review?')) {
+            return;
+        }
+
+        const reviewsPath = `/reviews/${deal.id}`;
+        try {
+            // first, recalculate the average rating
+            const currentReviews = await getDbData(`/reviews/${deal.id}`);
+            let newAverage;
+            let totalRating = 0;
+            let numberOfReviews = 0;
+
+            if (currentReviews && currentReviews.user_reviews) {
+                Object.entries(currentReviews.user_reviews).forEach(([userId, userReview]) => {
+                    if (userId !== user.uid) {
+                        totalRating += userReview.rating;
+                        numberOfReviews++;
+                    }
+                }
+                );
+            }
+
+            newAverage = totalRating / numberOfReviews;
+            // guard against NaN
+            if (isNaN(newAverage)) {
+                newAverage = 0;
+            }
+
+            const userReviewUpdate = {
+                average: newAverage,
+                time: Date.now(),
+                [`user_reviews/${user.uid}`]: null,
+            };
+
+            await writeToDb(reviewsPath, userReviewUpdate);
+            handleClose();
+        } catch (error) {
+            console.error("Error deleting review:", error);
+            setError('An error occurred while deleting your review. Please try again.');
+        }
     };
 
     const submitReview = async () => {
@@ -104,6 +153,7 @@ const ReviewModal = ({ deal, fetchReviews }) => {
                 }
 
                 await writeToDb(reviewsPath, userReviewUpdate);
+                fetchUserReview();
                 handleClose();
             } catch (error) {
                 console.error("Error submitting review:", error);
@@ -117,7 +167,7 @@ const ReviewModal = ({ deal, fetchReviews }) => {
     return (
         <>
             <NextUIButton onPress={onOpen} startContent={<RateReviewOutlined className='text-[#4e2a84]' />} variant="bordered" className=" hover:bg-[#EEE4FF] text-black py-2 px-4 rounded-3xl">
-                Write a Review
+                {userReviewed ? 'Edit Review' : 'Write a Review'}
             </NextUIButton>
             <Modal
                 isOpen={isOpen}
@@ -202,8 +252,13 @@ const ReviewModal = ({ deal, fetchReviews }) => {
                         <NextUIButton color="danger" variant="light" onPress={handleClose} className="rounded-md">
                             Cancel
                         </NextUIButton>
+                        {userReviewed &&
+                            <NextUIButton color="danger" onPress={handleDelete} className="rounded-md">
+                                Delete
+                            </NextUIButton>
+                        }
                         <NextUIButton onPress={submitReview} className="bg-[#4E2A84] hover:bg-[#4E2A84] text-white font-bold py-2 px-4 rounded-md" isDisabled={rating <= 0}>
-                            Post
+                            {userReviewed ? 'Update' : 'Post'}
                         </NextUIButton>
                     </ModalFooter>
                 </ModalContent>

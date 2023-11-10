@@ -29,7 +29,7 @@
 }
 
 /* Larger screens (tablets, desktops) */
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
     .sidebar {
         display: block;
         /* Show the sidebar */
@@ -39,4 +39,8 @@
         width: 75%;
         /* Set the map width to 75% when the sidebar is visible */
     }
+}
+
+.leaflet-container {
+    height: 100%;
 }

@@ -9,8 +9,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh;
-    background-color: #54147c;
+    min-height: 100dvh;
+    background-color: #4E2A84;
 }
 
 .container-login .card-login {

@@ -20,8 +20,8 @@ const PhotoGallery = ({ images }) => {
             thumbnail: image,
             width: "auto",
             height: "auto",
-      thumbnailWidth: "auto",
-      thumbnailHeight: "auto",
+            thumbnailWidth: "auto",
+            thumbnailHeight: "auto",
         })
         );
 
@@ -48,7 +48,7 @@ const PhotoGallery = ({ images }) => {
             carousel={{
                 imageFit: "cover",
                 finite: true,
-              }}
+            }}
             render={{
                 buttonPrev: images.length > 1 ? undefined : () => null,
                 buttonNext: images.length > 1 ? undefined : () => null,
